@@ -13,6 +13,14 @@ https://blog.csdn.net/qyhua/article/details/139505301
 如果无法访问，可以直接wget每个文件，并将url改成国内镜像
 
 
+### 修改模型默认存储路径
+
+``` python
+import os
+os.environ["HF_HOME"] = "./cache"
+os.environ['TORCH_HOME']='./cache'
+```
+
 
 ### Llama3 转换为 Huggingface 格式
 
