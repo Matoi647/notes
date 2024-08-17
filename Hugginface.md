@@ -17,8 +17,8 @@ https://blog.csdn.net/qyhua/article/details/139505301
 
 ``` python
 import os
-os.environ["HF_HOME"] = "./cache"
-os.environ['TORCH_HOME']='./cache'
+os.environ["HF_HOME"] = "./cache/hf"
+os.environ['TORCH_HOME']='./cache/torch'
 ```
 
 
