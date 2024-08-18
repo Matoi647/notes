@@ -2,7 +2,7 @@
 
 Docker 安装
 
-``` python
+``` shell
 sudo apt install docker.io
 sudo systemctl enable --now docker
 ```
