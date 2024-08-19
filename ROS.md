@@ -6,14 +6,12 @@ https://blog.csdn.net/zysss_/article/details/134125740
 docker pull osrf/ros:humble-desktop-full
 ```
 
-```
+``` shell
 docker run -it  \
-	--name <container_name> \
     --env="DISPLAY" \
     --env="QT_X11_NO_MITSHM=1" \
     --volume="/tmp/.X11-unix:/tmp/.X11-unix:rw" \
     osrf/ros:noetic-desktop-full \
-    rqt
 ```
 
 ```shell
