@@ -10,6 +10,11 @@ sudo apt-get install curl
 sudo apt-get install wget
 ```
 
+### 安装 nano
+``` shell
+sudo apt-get install nano 
+```
+
 ### 开启/关闭 Clash 代理
 ``` shell
 echo '
