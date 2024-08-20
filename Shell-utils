@@ -1,18 +1,12 @@
+### 安装常用工具
+``` shell
+sudo apt-get install curl wget nano zip
+```
+
 ### 安装 xclock，用于测试图形界面显示
 ``` shell
 sudo apt-get update
 sudo apt-get install x11-apps
-```
-
-### 安装 curl 和 wget
-``` shell
-sudo apt-get install curl
-sudo apt-get install wget
-```
-
-### 安装 nano
-``` shell
-sudo apt-get install nano 
 ```
 
 ### 开启/关闭 Clash 代理
