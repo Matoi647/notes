@@ -9,6 +9,12 @@ sudo apt-get update
 sudo apt-get install x11-apps
 ```
 
+### apt-get 卸载重装
+``` shell
+sudo apt-get remove --purge ros-noetic-moveit
+sudo apt-get autoremove
+```
+
 ### 开启/关闭 Clash 代理
 ``` shell
 echo '
