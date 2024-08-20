@@ -1,5 +1,7 @@
 ### Oh-My-Zsh 安装
 
+https://www.haoyep.com/posts/zsh-config-oh-my-zsh/
+
 https://ohmyz.sh/#install
 
 https://github.com/ohmyzsh/ohmyzsh
@@ -56,3 +58,42 @@ git clone --depth=1 https://gitee.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$H
 
 最后`source ~/.zshrc`
 
+### 安装插件
+
+语法高亮 zsh-syntax-highlighting
+
+``` shell
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+```
+
+命令提示 zsh-autosuggestions
+``` shell
+git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+```
+
+编辑`~/.zshrc`，添加插件
+``` shell
+plugins=(git zsh-syntax-highlighting zsh-autosuggestions)
+```
+
+### 修改 power10k 显示
+
+输入 `p10k configure` 逐步选择
+``` shell
+p10k configure
+```
+
+或者直接编辑 `~/.p10k.zsh`
+
+https://github.com/romkatv/powerlevel10k/blob/master/README.md
+
+取消显示用户名和右边的三条横线：修改`POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS`，注释掉`context`和`background_jobs`
+
+``` shell
+typeset -g POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(
+    ...
+    # background_jobs         # presence of background jobs
+    # context                 # user@hostname
+    ...
+)
+```
