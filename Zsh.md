@@ -97,3 +97,5 @@ typeset -g POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(
     ...
 )
 ```
+
+最后`source ~/.zshrc`
