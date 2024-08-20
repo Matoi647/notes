@@ -41,5 +41,18 @@ git -C $ZSH remote set-url origin https://mirrors.tuna.tsinghua.edu.cn/git/ohmyz
 git -C $ZSH pull
 ```
 
+### 安装 power10k
 
+``` shell
+git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
+```
+
+或者使用 power10k 国内镜像
+``` shell
+git clone --depth=1 https://gitee.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
+```
+
+然后在`~/.zshrc`中添加一行`ZSH_THEME="powerlevel10k/powerlevel10k"` （默认是robbyrussell）
+
+最后`source ~/.zshrc`
 
