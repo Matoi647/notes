@@ -1,0 +1,32 @@
+### 安装 xclock，用于测试图形界面显示
+``` shell
+sudo apt-get update
+sudo apt-get install x11-apps
+```
+
+### 安装 curl 和 wget
+``` shell
+sudo apt-get install curl
+sudo apt-get install wget
+```
+
+### 开启/关闭 Clash 代理
+``` shell
+echo '
+proxy () {
+    export hostip=$(cat /etc/resolv.conf | grep -oP "(?<=nameserver\ ).*")
+    export https_proxy="https://${hostip}:7890"
+    export http_proxy="http://${hostip}:7890"
+    export all_proxy="socks5://${hostip}:7891"
+    echo "HTTP Proxy on: ${hostip}"
+}
+
+noproxy () {
+    unset http_proxy
+    unset https_proxy
+    unset all_proxy
+    echo "HTTP Proxy off"
+}
+' >> ~/.bashrc
+source ~/.bashrc
+```
