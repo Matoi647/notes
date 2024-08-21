@@ -12,3 +12,11 @@ https://blog.csdn.net/yiyongjiang/article/details/121498080
 # git clone https://github.com/agilexrobotics/mobile_aloha_sim.git
 git clone http://github.com/agilexrobotics/mobile_aloha_sim.git
 ```
+
+### Github Proxy
+https://mirror.ghproxy.com/
+
+在 Github url 前加上 `https://mirror.ghproxy.com/` 即可
+``` shell
+git clone https://mirror.ghproxy.com/https://github.com/Yifan-Song793/ETO.git
+```
