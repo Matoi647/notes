@@ -9,6 +9,7 @@ https://blog.csdn.net/qyhua/article/details/139505301
 或者直接换源：
 
 ``` python
+# export HF_ENDPOINT=https://hf-mirror.com
 import os
 os.environ["HF_ENDPOINT"] = "https://hf-mirror.com"
 ```
