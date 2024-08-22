@@ -22,10 +22,13 @@ os.environ["HF_ENDPOINT"] = "https://hf-mirror.com"
 ### 修改模型默认存储路径
 
 ``` python
+# export HF_ENDPOINT=https://hf-mirror.com
+# export HF_HOME=./cache/hf
+# export TORCH_HOME=./cache/torch
 import os
 os.environ["HF_ENDPOINT"] = "https://hf-mirror.com"
 os.environ["HF_HOME"] = "./cache/hf"
-os.environ['TORCH_HOME']='./cache/torch'
+os.environ['TORCH_HOME']="./cache/torch"
 ```
 
 
