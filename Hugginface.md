@@ -6,7 +6,12 @@ https://blog.csdn.net/qyhua/article/details/139505301
 
 改成：https://hf-mirror.com/THUDM/chatglm3-6b，即可访问
 
+或者直接换源：
 
+``` python
+import os
+os.environ["HF_ENDPOINT"] = "https://hf-mirror.com"
+```
 
 ### Hugginface 模型下载
 
@@ -17,6 +22,7 @@ https://blog.csdn.net/qyhua/article/details/139505301
 
 ``` python
 import os
+os.environ["HF_ENDPOINT"] = "https://hf-mirror.com"
 os.environ["HF_HOME"] = "./cache/hf"
 os.environ['TORCH_HOME']='./cache/torch'
 ```
