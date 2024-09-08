@@ -1,3 +1,21 @@
+### Huggingface 下载
+
+``` python
+import os
+os.environ["HF_ENDPOINT"] = "https://hf-mirror.com"
+# os.environ["HF_HOME"] = "./cache/hf"
+# os.environ['TORCH_HOME']="./cache/torch"
+
+from huggingface_hub import snapshot_download
+
+snapshot_download(repo_id="lysandre/arxiv-nlp",
+                  local_dir="./arxiv-nlp")
+
+snapshot_download(repo_id="google/fleurs", 
+                  repo_type="dataset", 
+                  local_dir="./fleurs")
+```
+
 ### Huggingface 国内镜像
 
 https://blog.csdn.net/qyhua/article/details/139505301
