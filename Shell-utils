@@ -1,3 +1,8 @@
+### du 按文件大小排序
+```
+du -ahl ./ --max-depth 1 | sort -rh
+```
+
 ### 安装常用工具
 ``` shell
 sudo apt-get install curl wget nano zip
