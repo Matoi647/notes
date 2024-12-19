@@ -11,7 +11,9 @@
     "name": "llava-dpo-debug",
     "type": "debugpy",
     "request": "launch",
-    "program": "/home/lbyang/workspace/llm-robot/openvla/trl/examples/scripts/dpo_visual.py",
+    "python": "/data/conda_envs/openvla-env/bin/python"
+    "cwd": "/home/workspace/llm-robot/openvla/trl/examples/scripts"
+    "program": "dpo_visual.py",
     "console": "integratedTerminal",
     "args": [
         "--dataset_name", "/home/lbyang/workspace/llm-robot/openvla/trl/mytest/data/rlaif-v_formatted",
@@ -40,7 +42,7 @@
     "env": {
         "CUDA_VISIBLE_DEVICES": "1",
     },
-    "cwd": "/home/lbyang/workspace/llm-robot/openvla",
+    "cwd": "/home/workspace/llm-robot/openvla",
     "args": [
         "--standalone",
         "--nnodes", "1",
