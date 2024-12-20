@@ -8,9 +8,21 @@ os.environ["HF_ENDPOINT"] = "https://hf-mirror.com"
 
 from huggingface_hub import snapshot_download
 
-snapshot_download(repo_id="lysandre/arxiv-nlp",
-                  local_dir="./arxiv-nlp")
-
+# download single file
+hf_hub_download(
+    repo_id="robotics-diffusion-transformer/maniskill-model", 
+    filename="rdt/mp_rank_00_model_states.pt", 
+    local_dir="./maniskill-model")
+# download repository
+snapshot_download(
+    repo_id="robotics-diffusion-transformer/maniskill-model",
+    local_dir="./maniskill-model")
+# download with file pattern
+snapshot_download(
+    repo_id="robotics-diffusion-transformer/maniskill-model",
+    allow_patterns="lang_embeds/*",
+    local_dir="./maniskill-model")
+# download dataset
 snapshot_download(repo_id="google/fleurs", 
                   repo_type="dataset", 
                   local_dir="./fleurs")
