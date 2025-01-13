@@ -4,6 +4,18 @@ https://developer.nvidia.com/cuda-downloads
 
 https://docs.nvidia.com/cuda/cuda-installation-guide-linux/index.html#conda-installation
 
+```
+conda install cuda -c nvidia
+```
+
+安装指定版本
+
+```
+conda install cuda -c nvidia/label/cuda-11.3.0
+```
+
+
+
 ### `nvcc -V` 和 `nvidia-smi` 的区别
 
 https://stackoverflow.com/questions/53422407/different-cuda-versions-shown-by-nvcc-and-nvidia-smi
