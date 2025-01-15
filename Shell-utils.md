@@ -3,6 +3,11 @@
 du -ahl ./ --max-depth 1 | sort -rh
 ```
 
+### 复制文件时忽略指定目录
+```
+rsync -av --exclude='exp/' [username]@[remote ip]:[remote dir] [local dir]
+```
+
 ### 安装常用工具
 ``` shell
 sudo apt-get install curl wget nano zip
