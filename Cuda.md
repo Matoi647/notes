@@ -11,7 +11,8 @@ conda install cuda -c nvidia
 安装指定版本
 
 ```
-conda install cuda -c nvidia/label/cuda-11.3.0
+conda install cuda -c nvidia/label/cuda-11.8.0
+pip3 install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118
 ```
 
 
