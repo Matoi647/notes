@@ -13,6 +13,8 @@ conda install cuda -c nvidia
 ```
 conda install cuda -c nvidia/label/cuda-11.8.0
 pip3 install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118
+# pip3 install torch==2.0 --index-url https://download.pytorch.org/whl/cu118
+# pip3 install torch==2.0 -f https://mirrors.aliyun.com/pytorch-wheels/cu118
 ```
 
 
