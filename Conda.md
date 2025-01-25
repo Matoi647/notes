@@ -11,36 +11,25 @@ bash Miniconda3-latest-Linux-x86_64.sh
 !bash Miniconda3-latest-Linux-x86_64.sh -b -f -p /usr/local
 ```
 
-### 取消自动激活 base 环境
-
-```shell
-conda config --set auto_activate_base false
-```
-
-或者直接修改`~/.condarc`
-
-### 修改环境存储路径`envs_dirs`
+### `.condarc`设置
 
 ```shell
 # ~/.condarc
-envs_dirs:
-  - /data/<username>
 auto_activate_base: false
-```
-
-### 换源`channels`
-
-```shell
-conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main/
-conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/
-```
-
-```shell
-# ~/.condarc
+envs_dirs:
+  - /path/to/conda/envs
+pkgs_dirs:
+  - /path/to/conda/pkgs
 channels:
-  - channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main/
   - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/
+  - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main/
+  - defaults
+
 ```
 
+### Conda清理空间
 
-
+```shell
+conda clean --packages  # 清除没有用到的包
+conda clean --tarballs  # 清除*.tar
+```
