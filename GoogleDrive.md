@@ -32,10 +32,6 @@ gdown -c https://drive.google.com/uc?id=1ftesnmlh7NU3m5MuXGQ6OCJkylTsBOjU
 
 ### Google Drive 文件访问过多限制
 
-https://zhuanlan.zhihu.com/p/678366332
-
-https://bytesbin.com/how-to-download-a-large-file-from-google-drive-quickly/
-
 ``` shell
 Failed to retrieve file url:
 
@@ -53,4 +49,19 @@ You may still be able to access the file from the browser:
 but Gdown can't. Please check connections and permissions.
 unzip:  cannot find or open test_data.zip, test_data.zip.zip or test_data.zip.ZIP.
 rm: cannot remove 'test_data.zip': No such file or directory
+```
+
+解决方法：
+
+https://zhuanlan.zhihu.com/p/678366332
+
+https://bytesbin.com/how-to-download-a-large-file-from-google-drive-quickly/
+
+https://developers.google.com/oauthplayground/
+
+```
+# 将 `AccessToken` 替换为 oauthplayground 中的 AccessToken
+# FileID 替换为原始下载链接中的 id
+# FileName 替换为文件名
+curl -H "Authorization: Bearer AccessToken" https://www.googleapis.com/drive/v3/files/FildeID?alt=media -o FileName
 ```
