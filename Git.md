@@ -13,10 +13,22 @@ https://blog.csdn.net/yiyongjiang/article/details/121498080
 git clone http://github.com/agilexrobotics/mobile_aloha_sim.git
 ```
 
-### Github Proxy
-https://mirror.ghproxy.com/
+### ~~Github Proxy~~
 
-在 Github url 前加上 `https://mirror.ghproxy.com/` 即可
+~~https://mirror.ghproxy.com/~~
+
+~~在 Github url 前加上 `https://mirror.ghproxy.com/` 即可~~
+
 ``` shell
 git clone https://mirror.ghproxy.com/https://github.com/Yifan-Song793/ETO.git
+```
+
+### Github Proxy
+
+https://gh-proxy.com/
+
+https://github.com/qureshinomaan/SplatSim.git -> https://gh-proxy.com/github.com/qureshinomaan/SplatSim.git
+
+``` shell
+git clone https://gh-proxy.com/github.com/qureshinomaan/SplatSim.git
 ```
