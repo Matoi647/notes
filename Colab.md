@@ -11,8 +11,22 @@ https://medium.com/@ajithkumarv/how-to-modify-cuda-gcc-python-versions-in-colab-
 !sudo apt-get update
 !sudo apt-get -y install cuda-11-8
 
-!export CUDA_HOME=/usr/local/cuda-11.8/
-!export PATH=/ur/local/cuda-11.8/bin:$PATH
-!export LD_LIBRARY_PATH=/usr/local/cuda-11.8/lib64:$LD_LIBRARY_PATH
+!export CUDA_HOME=/usr/local/cuda-11.8 && \
+export PATH=/usr/local/cuda-11.8/bin:$PATH && \
+export LD_LIBRARY_PATH=/usr/local/cuda-11.8/lib64:$LD_LIBRARY_PATH && \
+nvcc --version
+```
+
+在 Colab 中使用环境变量
+
+``` shell
+import os
+
+cuda_version = "11.8"
+
+os.environ["CUDA_HOME"] = f"/usr/local/cuda-{cuda_version}"
+os.environ["PATH"] = f"/usr/local/cuda-{cuda_version}/bin:" + os.environ["PATH"]
+os.environ["LD_LIBRARY_PATH"] = f"/usr/local/cuda-{cuda_version}/lib64:" + os.environ.get("LD_LIBRARY_PATH", "")
+
 !nvcc --version
 ```
