@@ -29,3 +29,28 @@ gdown https://drive.google.com/uc?id=1ftesnmlh7NU3m5MuXGQ6OCJkylTsBOjU
 ``` shell
 gdown -c https://drive.google.com/uc?id=1ftesnmlh7NU3m5MuXGQ6OCJkylTsBOjU
 ```
+
+### Google Drive 文件访问过多限制
+
+https://zhuanlan.zhihu.com/p/678366332
+
+https://bytesbin.com/how-to-download-a-large-file-from-google-drive-quickly/
+
+``` shell
+Failed to retrieve file url:
+
+	Too many users have viewed or downloaded this file recently. Please
+	try accessing the file again later. If the file you are trying to
+	access is particularly large or is shared with many people, it may
+	take up to 24 hours to be able to view or download the file. If you
+	still can't access a file after 24 hours, contact your domain
+	administrator.
+
+You may still be able to access the file from the browser:
+
+	https://drive.google.com/uc?id=14D3fFtaPX4GBe9dSJLKAIvUYlgK7fUxS
+
+but Gdown can't. Please check connections and permissions.
+unzip:  cannot find or open test_data.zip, test_data.zip.zip or test_data.zip.ZIP.
+rm: cannot remove 'test_data.zip': No such file or directory
+```
