@@ -10,6 +10,9 @@ https://medium.com/@ajithkumarv/how-to-modify-cuda-gcc-python-versions-in-colab-
 !sudo cp /var/cuda-repo-ubuntu2204-11-8-local/cuda-*-keyring.gpg /usr/share/keyrings/
 !sudo apt-get update
 !sudo apt-get -y install cuda-11-8
-!export CUDA_PATH=/usr/local/cuda-11.8/
+
+!export CUDA_HOME=/usr/local/cuda-11.8/
+!export PATH=/ur/local/cuda-11.8/bin:$PATH
+!export LD_LIBRARY_PATH=/usr/local/cuda-11.8/lib64:$LD_LIBRARY_PATH
 !nvcc --version
 ```
