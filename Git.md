@@ -32,3 +32,11 @@ https://github.com/qureshinomaan/SplatSim.git -> https://gh-proxy.com/github.com
 ``` shell
 git clone https://gh-proxy.com/github.com/qureshinomaan/SplatSim.git
 ```
+
+### Git Diff 忽略文件
+
+
+``` shell
+git diff -- . ':!docs/config.ini' ':!logs/'
+git diff -- ':!*.log' ':!tmp/*'
+```
