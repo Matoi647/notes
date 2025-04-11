@@ -27,6 +27,11 @@ https://stackoverflow.com/questions/53422407/different-cuda-versions-shown-by-nv
 
 `nvcc -V` 显示的是当前安装的 CUDA 版本
 
+
+### 实时查看显存占用
+
+`nvitop`
+
 ### python 查看当前 torch 使用的 CUDA 版本
 
 ```
