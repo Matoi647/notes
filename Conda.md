@@ -20,6 +20,7 @@ https://github.com/conda-incubator/condacolab/tree/0.1.x
 import condacolab
 condacolab.install()
 condacolab.check()
+!which python
 ```
 
 
