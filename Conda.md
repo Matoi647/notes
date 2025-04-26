@@ -11,6 +11,18 @@ bash Miniconda3-latest-Linux-x86_64.sh
 !bash Miniconda3-latest-Linux-x86_64.sh -b -f -p /usr/local
 ```
 
+### Condacolab
+
+https://github.com/conda-incubator/condacolab/tree/0.1.x
+
+``` shell
+!pip install -q condacolab
+import condacolab
+condacolab.install()
+condacolab.check()
+```
+
+
 ### `.condarc`设置
 
 ```shell
