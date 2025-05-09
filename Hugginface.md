@@ -65,6 +65,23 @@ os.environ["HF_HOME"] = "./cache/hf"
 os.environ['TORCH_HOME']="./cache/torch"
 ```
 
+### Huggingface上传
+
+1. 首先在huggingface网站上手动创建仓库
+
+2. `huggingface-cli login`，输入huffingface token
+
+3. 
+``` python
+from huggingface_hub import HfApi
+
+api = HfApi()
+api.upload_folder(
+    folder_path="/path/to/local/space",
+    repo_id="username/my-cool-space",
+    repo_type="space",
+)
+```
 
 ### Llama3 转换为 Huggingface 格式
 
