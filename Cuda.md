@@ -30,7 +30,11 @@ https://stackoverflow.com/questions/53422407/different-cuda-versions-shown-by-nv
 
 ### 实时查看显存占用
 
-`nvitop`
+`pip install nvitop`
+
+### 显存未释放
+
+`ps aux|grep python` 查看进程的启动命令
 
 ### python 查看当前 torch 使用的 CUDA 版本
 
