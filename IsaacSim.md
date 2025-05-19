@@ -16,3 +16,11 @@ https://blog.csdn.net/Vulcan_S/article/details/142418933
 cat /proc/sys/fs/inotify/max_user_watches
 sudo sysctl fs.inotify.max_user_watches=524288
 ```
+
+### USD材质丢失
+
+https://docs.omniverse.nvidia.com/extensions/latest/ext_usd-paths.html
+
+1. 右击usd文件 -> Collect Assets
+
+2. 左上角Windows -> Utilities -> USD Paths -> Search修改路径 -> Preview -> Apply
