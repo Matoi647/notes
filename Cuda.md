@@ -34,7 +34,7 @@ https://stackoverflow.com/questions/53422407/different-cuda-versions-shown-by-nv
 
 ### 显存未释放
 
-`ps aux|grep python` 查看进程的启动命令
+`ps aux | grep python` 查看进程的启动命令
 
 ### python 查看当前 torch 使用的 CUDA 版本
 
@@ -42,3 +42,7 @@ https://stackoverflow.com/questions/53422407/different-cuda-versions-shown-by-nv
 import torch
 print(torch.version.cuda)
 ```
+
+如果是通过 `conda install cuda -c nvidia/label/cuda-11.8.0 -y` 安装的 CUDA，则会改变整个 conda 环境中的 CUDA 路径，以上命令与 `nvcc -V` 显示的 CUDA 版本相同
+
+如果是通过 `pip install torch==2.3.1` 安装的 CUDA，则会根据 torch 的 requirements.txt 安装对应版本的 CUDA (nvidia-cuda-runtime-cu12==12.1.105)，而 `nvcc -V` 仍然显示 conda 环境之外的 CUDA 版本
