@@ -46,6 +46,16 @@ kx0j0zue5jhm   regular        0B        2 months ago   2 months ago   1         
 ru4a3ehp4jg7   regular        0B        2 months ago   2 months ago   1         false
 ```
 
+
+``` shell
+docker buildx du
+# 其中带星号的是可以删除的
+9zukmi0lckgpsfc6wnir8s7k7*                      true            334.1kB         23 hours ago
+z53yd1sls62sfitoh6dw39gjn                       true            333.8kB         24 hours ago
+yjhq6d6kd1op3tvsns1uq2v0u*                      true            0B              24 hours ago
+st9b39ltfc97mf31ml9wu1329                       true            0B              23 hours ago
+```
+
 ``` shell
 docker buildx du --verbose | grep -C 15 "o0l0o427an6" --color=auto
 
