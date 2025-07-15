@@ -106,3 +106,84 @@ docker buildx du | grep hours | awk 'NR>1 {print $1}' | while read -r ID; do
 done
 echo "Docker clean finished"
 ```
+
+``` python
+import subprocess
+from graphviz import Digraph
+import os
+
+# Usage: python3 docker-clean.py
+# put the generated docker_layer_tree file into https://www.devtoolsdaily.com/graphviz
+# clean cache layer from children to parent (according to the graph shown by the website)
+
+def main():
+    result = subprocess.run(
+        ['docker', 'buildx', 'du', '--verbose'],
+        capture_output=True, text=True
+    )
+    
+    if result.returncode != 0:
+        print("Failed to run docker buildx du")
+        print(result.stderr)
+        return
+    
+    output = result.stdout
+
+    layers = {}
+    current_id = None
+    
+    for line in output.split('\n'):
+        line = line.strip()
+        if line.startswith('ID:'):
+            current_id = line.split(':', 1)[1].strip()
+            layers[current_id] = {'parent': None, 'children': []}
+        elif line.startswith('Parent:') and current_id:
+            parent = line.split(':', 1)[1].strip()
+            layers[current_id]['parent'] = parent if parent != '<empty>' else None
+    
+    for layer_id, info in layers.items():
+        parent_id = info['parent']
+        if parent_id and parent_id in layers:
+            layers[parent_id]['children'].append(layer_id)
+    
+    dot = Digraph(comment='Docker cahce layer graph', 
+                  format='png',
+                  graph_attr={'rankdir': 'TB', 'splines': 'ortho'},
+                  node_attr={'shape': 'box', 'style': 'rounded,filled', 'fillcolor': '#E6F3FF'})
+    
+    for layer_id in layers:
+        if layers[layer_id]['parent'] is None or layers[layer_id]['parent'] not in layers:
+            dot.node(layer_id[:8], layer_id[:8], fillcolor='#FFD6A0')
+        else:
+            dot.node(layer_id[:8], layer_id[:8])
+    
+    for layer_id, info in layers.items():
+        for child_id in info['children']:
+            dot.edge(layer_id[:8], child_id[:8])
+    
+    dot.render('docker_layer_tree', view=True)
+    print(f"Generated graph: {os.path.abspath('docker_layer_tree.png')}")
+
+
+    print("Docker cache layer tree (top-down):")
+    for layer_id, info in layers.items():
+        if not info['parent'] or info['parent'] not in layers:
+            print_tree(layer_id, layers)
+
+def print_tree(layer_id, layers, depth=0, prefix=''):
+    print(f"{prefix}{layer_id[:12]}")
+
+    children = layers[layer_id]['children']
+    for i, child_id in enumerate(children):
+        is_last = (i == len(children) - 1)
+        new_prefix = prefix + ("│   " if not is_last else "    ")
+        connector = "└── " if is_last else "├── "
+        print(f"{prefix}{connector}{child_id[:12]}")
+        
+        if layers[child_id]['children']:
+            sub_prefix = prefix + ("    " if is_last else "│   ")
+            print_tree(child_id, layers, depth+1, sub_prefix)
+
+if __name__ == "__main__":
+    main()
+```
