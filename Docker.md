@@ -93,3 +93,16 @@ docker buildx prune --filter "id=o0l0o427an6"
 
 # 删除失败，因为Usage count不为0
 ```
+
+
+``` shell
+#!/bin/bash
+
+docker buildx du | grep hours | awk 'NR>1 {print $1}' | while read -r ID; do
+    CLEANED_ID="${ID%"*"}"
+    echo "Cleaning: $CLEANED_ID"
+    docker buildx prune -f --filter "id=$CLEANED_ID"
+    sleep 0.1
+done
+echo "Docker clean finished"
+```
