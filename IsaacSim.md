@@ -24,3 +24,19 @@ https://docs.omniverse.nvidia.com/extensions/latest/ext_usd-paths.html
 1. 右击usd文件 -> Collect Assets
 
 2. 左上角Windows -> Utilities -> USD Paths -> Search修改路径 -> Preview -> Apply
+
+
+### X Error of failed request: GLXBadFBConfig
+
+https://github.com/isaac-sim/IsaacLab/issues/2573
+
+``` shell
+2025-07-16 01:46:54 [0ms] [Warning] [omni.kit.app.plugin] No crash reporter present, dumps uploading isn't available.
+X Error of failed request:  GLXBadFBConfig
+  Major opcode of failed request:  148 (GLX)
+  Minor opcode of failed request:  0 ()
+  Serial number of failed request:  141
+  Current serial number in output stream:  141
+```
+
+解决方法：`export DISPLAY:=0`
