@@ -39,4 +39,4 @@ X Error of failed request:  GLXBadFBConfig
   Current serial number in output stream:  141
 ```
 
-解决方法：`export DISPLAY:=0`
+解决方法：`export DISPLAY=:0`
