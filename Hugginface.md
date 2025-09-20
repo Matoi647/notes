@@ -3,8 +3,8 @@
 ``` python
 import os
 os.environ["HF_ENDPOINT"] = "https://hf-mirror.com"
-# os.environ["HF_HOME"] = "./cache/hf"
-# os.environ['TORCH_HOME']="./cache/torch"
+# os.environ["HF_HOME"] = ".cache/hf"
+# os.environ['TORCH_HOME']=".cache/torch"
 
 from huggingface_hub import snapshot_download
 
