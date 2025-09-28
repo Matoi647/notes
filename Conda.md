@@ -11,6 +11,18 @@ bash Miniconda3-latest-Linux-x86_64.sh
 !bash Miniconda3-latest-Linux-x86_64.sh -b -f -p /usr/local
 ```
 
+### ` Do you wish the installer to initialize Anaconda3 by running conda init?[yes/no]`
+
+https://cloud.tencent.com/developer/article/2062844
+
+如果选择yes，则会更新~/.bashrc，自动激活conda base环境
+
+如果选择no，则需要手动修改~/.bashrc，否则conda无法使用
+
+```
+echo 'export PATH="~/miniconda3/bin:$PATH"' >> ~/.bashrc
+```
+
 ### Condacolab
 
 https://github.com/conda-incubator/condacolab/tree/0.1.x
