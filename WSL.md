@@ -28,3 +28,8 @@ https://learn.microsoft.com/zh-cn/windows/wsl/wsl-config
 
 https://zhuanlan.zhihu.com/p/20680293901
 
+```
+wsl --export Ubuntu-22.04 D:\wsl\image\wsl_ubuntu_2204.tar
+wsl --unregister Ubuntu-22.04
+wsl --import Ubuntu-22.04 D:\wsl\Ubuntu2204 D:\wsl\image\wsl_ubuntu_2204.tar
+```
