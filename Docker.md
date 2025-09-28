@@ -54,6 +54,7 @@ sudo systemctl restart docker
 
 ```
 sudo usermod -aG docker $USER
+# 重启之后生效
 ```
 
 ### 常用命令
