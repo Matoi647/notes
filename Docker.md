@@ -20,6 +20,42 @@ sudo apt-get update
 sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
 ```
 
+### 配置镜像
+
+https://toolshu.com/docker-mirror
+
+https://github.com/dongyubin/DockerHub
+
+https://blog.csdn.net/weixin_48953586/article/details/145503572
+
+```
+sudo mkdir -p /etc/docker
+sudo nano /etc/docker/daemon.json
+```
+
+`/etc/docker/daemon.json`如下：
+
+```
+{
+  "registry-mirrors": [
+    "https://docker.1ms.run",
+    "https://docker.m.daocloud.io",
+    "https://docker-0.unsee.tech"
+  ]
+}
+```
+
+```
+sudo systemctl daemon-reload  
+sudo systemctl restart docker
+```
+
+### Docker添加用户组
+
+```
+sudo usermod -aG docker $USER
+```
+
 ### 常用命令
 
 ``` shell
