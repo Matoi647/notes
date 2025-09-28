@@ -33,3 +33,19 @@ wsl --export Ubuntu-22.04 D:\wsl\image\wsl_ubuntu_2204.tar
 wsl --unregister Ubuntu-22.04
 wsl --import Ubuntu-22.04 D:\wsl\Ubuntu2204 D:\wsl\image\wsl_ubuntu_2204.tar
 ```
+
+
+### 更改WSL用户
+
+WSL export->unregister-import 之后，用户会从原来变为root
+
+```
+sudo nano /etc/wsl.conf
+```
+
+修改`/etc/wsl.conf`，添加以下内容：
+
+```
+[user]
+default = <USERNAME>
+```
