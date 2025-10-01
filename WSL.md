@@ -28,8 +28,7 @@ https://learn.microsoft.com/zh-cn/windows/wsl/wsl-config
 ### WSL 代理
 
 WSL 默认使用NAT网络模式，无法和Windows共用代理，需要手动设置代理
-
-https://zhuanlan.zhihu.com/p/153124468
+（注意：Clash要设置允许局域网）
 
 ```
 export WIN_IP=$(cat /etc/resolv.conf | grep nameserver | awk '{print $2}')
@@ -40,7 +39,7 @@ export http_proxy="http://$WIN_IP:7897"
 export https_proxy="https://$WIN_IP:7897"
 export all_proxy="http://$WIN_IP:7897"
 
-#export NO_PROXY="localhost,127.0.0.1,::1"
+# export NO_PROXY="localhost,127.0.0.1,::1"
 ```
 
 WSL使用镜像网络：https://learn.microsoft.com/en-us/windows/wsl/networking
