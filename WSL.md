@@ -27,7 +27,18 @@ https://learn.microsoft.com/zh-cn/windows/wsl/wsl-config
 
 ### WSL 代理
 
-https://learn.microsoft.com/en-us/windows/wsl/networking
+WSL 默认使用NAT网络模式，无法和Windows共用代理，需要手动设置代理
+
+https://zhuanlan.zhihu.com/p/153124468
+
+```
+host_ip=$(cat /etc/resolv.conf | grep "nameserver" | cut -f 2 -d " ")
+export ALL_PROXY="http://$host_ip:7890"
+```
+
+WSL使用镜像网络：https://learn.microsoft.com/en-us/windows/wsl/networking
+
+仅支持Windows11 22H2及更高版本
 
 ### WSL 更改位置/镜像导出备份
 
