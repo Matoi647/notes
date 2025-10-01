@@ -19,10 +19,15 @@ DISKPART> exit
 
 ### WSL 配置
 
+https://learn.microsoft.com/en-us/windows/wsl/wsl-config#configuration-settings-for-wslconfig
+
 https://learn.microsoft.com/zh-cn/windows/wsl/wsl-config
 
 `wsl.conf` `.wslconfig` `systemd`
 
+### WSL 代理
+
+https://learn.microsoft.com/en-us/windows/wsl/networking
 
 ### WSL 更改位置/镜像导出备份
 
