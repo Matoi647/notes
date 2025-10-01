@@ -32,13 +32,24 @@ WSL 默认使用NAT网络模式，无法和Windows共用代理，需要手动设
 https://zhuanlan.zhihu.com/p/153124468
 
 ```
-host_ip=$(cat /etc/resolv.conf | grep "nameserver" | cut -f 2 -d " ")
-export ALL_PROXY="http://$host_ip:7890"
+export WIN_IP=$(cat /etc/resolv.conf | grep nameserver | awk '{print $2}')
+export HTTP_PROXY="http://$WIN_IP:7897"
+export HTTPS_PROXY="https://$WIN_IP:7897"
+export ALL_PROXY="http://$WIN_IP:7897"
+export http_proxy="http://$WIN_IP:7897"
+export https_proxy="https://$WIN_IP:7897"
+export all_proxy="http://$WIN_IP:7897"
+
+#export NO_PROXY="localhost,127.0.0.1,::1"
 ```
 
 WSL使用镜像网络：https://learn.microsoft.com/en-us/windows/wsl/networking
 
 仅支持Windows11 22H2及更高版本
+
+### WSL ping 不通 Windows主机
+
+https://blog.csdn.net/Cypher_X/article/details/123011200
 
 ### WSL 更改位置/镜像导出备份
 
