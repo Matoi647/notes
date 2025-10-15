@@ -17,6 +17,12 @@ cat /proc/sys/fs/inotify/max_user_watches
 sudo sysctl fs.inotify.max_user_watches=524288
 ```
 
+### 设置 default prim
+
+1. 找到root prim, unset default prim
+2. 找到要设置的prim，左上角Edit->Unparent, 然后拖放到root prim同一层级
+3. 选择要设置的prim, 右键set as default prim
+
 ### USD材质丢失
 
 https://docs.omniverse.nvidia.com/extensions/latest/ext_usd-paths.html
