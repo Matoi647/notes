@@ -54,3 +54,11 @@ python -c "import torch; print(torch.cuda.is_available())"
 python -c "import torch; print(torch.version.cuda)"
 python -c "import torch; print(torch.cuda.get_device_capability())"
 ```
+
+
+### CUDA Toolkit 安装目录
+
+通常安装在`/usr/local`下，如果在conda中：
+```
+export CUDA_HOME=/data2/hwz/conda/envs/gsplat-py311-tmp
+```
