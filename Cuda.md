@@ -11,7 +11,8 @@ conda install cuda -c nvidia
 安装指定版本
 
 ```
-conda install cuda -c nvidia/label/cuda-11.8.0
+conda install nvidia/label/cuda-11.8.0::cuda -y
+# conda install nvidia/label/cuda-12.4.1::cuda -y
 pip3 install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118
 # pip3 install torch==2.0 --index-url https://download.pytorch.org/whl/cu118
 # pip3 install torch==2.0 -f https://mirrors.aliyun.com/pytorch-wheels/cu118
@@ -46,3 +47,10 @@ print(torch.version.cuda)
 如果是通过 `conda install cuda -c nvidia/label/cuda-11.8.0 -y` 安装的 CUDA，则会改变整个 conda 环境中的 CUDA 路径，以上命令与 `nvcc -V` 显示的 CUDA 版本相同
 
 如果是通过 `pip install torch==2.3.1` 安装的 CUDA，则会根据 torch 的 requirements.txt 安装对应版本的 CUDA (nvidia-cuda-runtime-cu12==12.1.105)，而 `nvcc -V` 仍然显示 conda 环境之外的 CUDA 版本
+
+
+```
+python -c "import torch; print(torch.cuda.is_available())"
+python -c "import torch; print(torch.version.cuda)"
+python -c "import torch; print(torch.cuda.get_device_capability())"
+```
