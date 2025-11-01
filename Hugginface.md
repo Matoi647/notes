@@ -7,13 +7,6 @@ os.environ["HF_ENDPOINT"] = "https://hf-mirror.com"
 # os.environ['TORCH_HOME']=".cache/torch"
 
 from huggingface_hub import snapshot_download
-
-import os
-os.environ["HF_ENDPOINT"] = "https://hf-mirror.com"
-os.environ["HF_HOME"] = ".cache/hf"
-os.environ['TORCH_HOME']=".cache/torch"
-
-from huggingface_hub import snapshot_download
 from huggingface_hub import login
 login(token="hf_****")
 
