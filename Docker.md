@@ -213,8 +213,8 @@ def main():
         for child_id in info['children']:
             dot.edge(layer_id[:8], child_id[:8])
     
-    dot.render('docker_layer_tree', view=True)
-    print(f"Generated graph: {os.path.abspath('docker_layer_tree.png')}")
+    # dot.render('docker_layer_tree', view=True)
+    # print(f"Generated graph: {os.path.abspath('docker_layer_tree.png')}")
 
 
     print("Docker cache layer tree (top-down):")
