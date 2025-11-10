@@ -212,9 +212,11 @@ def main():
     for layer_id, info in layers.items():
         for child_id in info['children']:
             dot.edge(layer_id[:8], child_id[:8])
-    
-    # dot.render('docker_layer_tree', view=True)
-    # print(f"Generated graph: {os.path.abspath('docker_layer_tree.png')}")
+
+    # This line of code raise error `failed to execute PosixPath('dot')`, just ignore it
+    # We need this line of code to get the output file
+    dot.render('docker_layer_tree', view=True)
+    print(f"Generated graph: {os.path.abspath('docker_layer_tree.png')}")
 
 
     print("Docker cache layer tree (top-down):")
