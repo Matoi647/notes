@@ -15,6 +15,12 @@ conda install cuda -c nvidia/label/cuda-11.8.0 -y
 conda install cuda -c nvidia/label/cuda-12.4.1 -y
 # conda install nvidia/label/cuda-11.8.0::cuda -y  # Don't install this way
 # conda install nvidia/label/cuda-12.4.1::cuda -y  # Don't install this way
+
+export CUDA_HOME=$CONDA_PREFIX
+export PATH=$CUDA_HOME/bin:$PATH
+# export LD_LIBRARY_PATH=$CUDA_HOME/lib:$LD_LIBRARY_PATH  # if installing flash-attention, comment this line
+
+
 pip3 install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118
 # pip3 install torch==2.0 --index-url https://download.pytorch.org/whl/cu118
 # pip3 install torch==2.0 -f https://mirrors.aliyun.com/pytorch-wheels/cu118
