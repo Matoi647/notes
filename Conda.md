@@ -52,6 +52,12 @@ channels:
 
 ```
 
+### 取消自动激活base
+
+``` shell
+conda config --set auto_activate_base false
+```
+
 ### Conda清理空间
 
 ```shell
