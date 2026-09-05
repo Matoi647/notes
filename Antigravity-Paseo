@@ -6,10 +6,11 @@ curl -fsSL https://antigravity.google/cli/install.sh | bash
 
 ### Paseo
 
-1. 安装 Paseo
+1. 安装并运行 Paseo
 
 ``` bash
 npm install -g @getpaseo/cli
+paseo
 ```
 
 2. 下载 Google 官方 Antigravity ACP 内核发布包
@@ -70,10 +71,4 @@ npx -y paseo-agy-acp --login
 paseo reload
 paseo provider ls
 paseo provider diagnostic antigravity
-```
-
-6. 运行 Paseo 服务
-
-``` bash
-paseo daemon pair
 ```
