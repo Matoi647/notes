@@ -6,7 +6,13 @@ curl -fsSL https://antigravity.google/cli/install.sh | bash
 
 ### Paseo
 
-1. 下载 Google 官方 Antigravity ACP 内核发布包
+1. 安装 Paseo
+
+``` bash
+npm install -g @getpaseo/cli
+```
+
+2. 下载 Google 官方 Antigravity ACP 内核发布包
 
 ```bash
 mkdir -p ~/.local/opt
@@ -17,14 +23,14 @@ unzip agy-acp-server.zip
 chmod +x ~/.local/opt/agy_acp_server.par ~/.local/opt/localharness_external
 ```
 
-2. 完成内核的 Google 账号登录授权
+3. 完成内核的 Google 账号登录授权
 
 ``` bash
 export PASEO_AGY_ACP_OFFICIAL_BIN="$HOME/.local/opt/agy_acp_server.par"
 npx -y paseo-agy-acp --login
 ```
 
-3. 修改 Paseo 配置文件 `~/.paseo/config.json`
+4. 修改 Paseo 配置文件 `~/.paseo/config.json`
 
 注意修改 `USERNAME` 和代理
 
@@ -58,7 +64,7 @@ npx -y paseo-agy-acp --login
 }
 ```
 
-4. 重载 Paseo 并验证状态
+5. 重载 Paseo 并验证状态
 
 ``` bash
 paseo reload
@@ -66,7 +72,7 @@ paseo provider ls
 paseo provider diagnostic antigravity
 ```
 
-5. 运行 Paseo 服务
+6. 运行 Paseo 服务
 
 ``` bash
 paseo daemon pair
