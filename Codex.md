@@ -7,7 +7,7 @@ nvm install 22
 npm install -g @openai/codex
 
 # 2. cc-switch-cli
-curl -fsSL htts://github.com/SaladDay/cc-switch-cli/releases/latest/download/install.sh | bash
+curl -fsSL https://github.com/SaladDay/cc-switch-cli/releases/latest/download/install.sh | bash
 
 # 3. codex-provider-sync
 npm install -g @dailin521/codex-provider-sync
